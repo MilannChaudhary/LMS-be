@@ -3,3 +3,73 @@
 #### server test
 
 GET http://localhost:8000
+
+### Post new user
+
+
+POST http://localhost:8000/api/v1/users
+Content-Type: application/json
+
+{
+    "fname": "Ram",
+    "lname":"chaudhary",
+    "phone":"12345",
+    "email": "ram@gmail.com",
+    "password": "12345"
+}
+
+### login user
+
+
+POST http://localhost:8000/api/v1/users/login
+Content-Type: application/json
+
+{
+    
+    "email": "ram@gmail.com",
+    "password": "12345"
+}
+
+
+
+
+
+### Add a New Book
+POST http://localhost:8000/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "To Kill a Mockingbird ",
+  "author": "Harper Lee and nabin",
+  "genre": "Fiction",
+  "isbn": "9780061120082",
+  "publishedYear": 1961,
+  "summary": "A novel about racial injustice in the Deep South.",
+  "availability": true,
+  "status": "active",
+  "averageRating": 4.8
+}
+
+### Get All Books
+GET http://localhost:8000/api/v1/books
+
+### Get Book by ISBN
+GET http://localhost:8000/api/v1/books/9780061120082
+
+### Update a Book
+PUT http://localhost:8000/api/v1/books/9780061120084
+Content-Type: application/json
+
+{
+  "title": "To Kill a Mockingbird - Updated",
+  "author": "Harper Lee and milan lee",
+  "genre": "Fiction",
+  "publishedYear": 1960,
+  "summary": "An updated description of the novel about racial injustice in the Deep South.",
+  "availability": false,
+  "status": "inactive",
+  "averageRating": 4.9
+}
+
+### Delete a Book by ISBN
+DELETE http://localhost:8000/api/v1/books/9780061120082
